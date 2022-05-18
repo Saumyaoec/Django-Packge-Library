@@ -1,0 +1,31 @@
+# settings.py
+INSTALLED_APPS = (
+    ...
+    'import_export',
+)
+
+
+goto admins.py
+
+like we have model Employee in models.py
+
+from import_export.admin import ImportExportModelAdmin
+
+
+
+@admin.register(Employee):
+
+class EmployeeAdmin(ImportExportModelAdmin)
+      Pass
+      
+      comment out the admin.register Employee
+      
+      
+      run server 
+      
+      goto admin pannel
+      it show import and export
+      
+      click the import chose file then format
+      
+      if you go for export chose which format data clint need go for that and click submit then it will automatic downlord file 
