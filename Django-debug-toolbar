@@ -1,0 +1,51 @@
+1. python -m pip install django-debug-toolbar  
+
+or 
+
+1. pip install django-debug-toolbar
+
+
+2. INSTALLED_APPS = [
+    # ...
+    "debug_toolbar",
+    # ...
+]
+
+
+
+
+3. MIDDLEWARE = [
+    # ...
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # ...
+]
+
+
+
+4. go to project urls.py 
+
+from django.urls import include, path
+
+urlpatterns = [
+    # ...
+    path('__debug__/', include('debug_toolbar.urls')),
+]
+
+
+
+
+or 
+
+
+4. from django.urls import include, path
+
+
+if settings.DEBUG:
+    import debug_toolbar
+urlpatterns = [
+    # ...
+    path('__debug__/', include('debug_toolbar.urls')),
+] + urlpatterns
+
+
+
